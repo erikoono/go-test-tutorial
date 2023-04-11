@@ -12,6 +12,11 @@ func TestAddition(t *testing.T) {
 		want int
 	}{
 		// FIXME: テストケースを追加
+		"success test": {
+			numA: 0,
+			numB: 10,
+			want: 10,
+		},
 	}
 	// エラー系のテストパターン
 	fail := map[string]struct {
@@ -20,6 +25,26 @@ func TestAddition(t *testing.T) {
 		wantErrStr string
 	}{
 		// FIXME: テストケースを追加
+		"fail test1": {
+			numA:       -1,
+			numB:       9,
+			wantErrStr: "numA最小値エラー",
+		},
+		"fail test2": {
+			numA:       0,
+			numB:       9,
+			wantErrStr: "numB最小値エラー",
+		},
+		"fail test3": {
+			numA:       101,
+			numB:       10,
+			wantErrStr: "numA最大値エラー",
+		},
+		"fail test4": {
+			numA:       100,
+			numB:       201,
+			wantErrStr: "numB最大値エラー",
+		},
 	}
 
 	for tt, tc := range success {
