@@ -31,14 +31,14 @@ func TestAddition(t *testing.T) {
 			wantErrStr: "numA最小値エラー",
 		},
 		"fail test2": {
-			numA:       0,
-			numB:       9,
-			wantErrStr: "numB最小値エラー",
-		},
-		"fail test3": {
 			numA:       101,
 			numB:       10,
 			wantErrStr: "numA最大値エラー",
+		},
+		"fail test3": {
+			numA:       0,
+			numB:       9,
+			wantErrStr: "numB最小値エラー",
 		},
 		"fail test4": {
 			numA:       100,
